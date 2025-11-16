@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Документация Botano</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./../style.css"> 
+<link rel="stylesheet" href="./documentation.css">
+</head>
+<body>
+
+<div class="sidebar" id="sidebar">
+  <ul>
+    <li><a href="#buttons">Buttons</a></li>
+    <li><a href="#headers">Headers</a></li>
+    <li><a href="#heroes">Heroes</a></li>
+    <li><a href="#cards-sec">Cards</a></li>
+    <li><a href="#layout">Layout (Grid)</a></li>
+    <li><a href="#typography">Typography</a></li>
+    <li><a href="#js-components">JS Components</a></li>
+  </ul>
+</div>
+
+<header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="./../index.html" class="logo">Botano</a>
+      </div>
+      <nav class="nav">
+        <a href="./documentation.html" class="nav-link">Документация</a>
+        <a href="./index.html#about" class="nav-link">О нас</a>
+        <a href="./index.html#contact" class="nav-link">Помощь</a>
+        <div class="nav-actions">
+          <span class="version">v1.2</span>
+        </div>
+      </nav>
+    </div>
+</header>
+
+<div class="nn" style="height: 50vh; min-height: 400px;">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.99/build/spline-viewer.js"></script>
+    <spline-viewer url="https://prod.spline.design/QGl-7fjFE0zcdxww/scene.splinecode"></spline-viewer>
+</div>
+
+
+<main class="doc-container">
+
+  <section id="buttons" class="doc-section">
+    <h2 class="section-title">Buttons</h2>
+    <p class="section-desc">Нажмите на саму кнопку, чтобы увидеть hover-эффект. Нажмите на карточку (белую область), чтобы открыть документацию.</p>
+    
+    <div class="grid-4">
+      <div class="component-card" onclick="openModal('btn-primary')">
+        <div class="preview">
+          <button class="btn btn-primary">Primary</button>
+        </div>
+        <div class="card-info"><h4>Primary Button</h4></div>
+      </div>
+
+      <div class="component-card" onclick="openModal('btn-ghost')">
+        <div class="preview">
+          <button class="btn btn-ghost">Ghost</button>
+        </div>
+        <div class="card-info"><h4>Ghost Button</h4></div>
+      </div>
+      
+      <div class="component-card" onclick="openModal('btn-gradient')">
+        <div class="preview">
+          <button class="btn btn-gradient-demo">Gradient</button>
+        </div>
+        <div class="card-info"><h4>Gradient Button</h4></div>
+      </div>
+
+      <div class="component-card" onclick="openModal('btn-outline')">
+        <div class="preview">
+          <button class="btn btn-outline-demo">Outline</button>
+        </div>
+        <div class="card-info"><h4>Outline Button</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="headers" class="doc-section">
+    <h2 class="section-title">Headers (Navbars)</h2>
+    <div class="grid-2">
+      <div class="component-card" onclick="openModal('header-standard')">
+        <div class="preview preview-dark">
+          <div class="preview-header">
+            <span class="logo-preview">Botano</span>
+            <div class="nav-preview">
+              <span>Доки</span>
+              <span>О нас</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-info"><h4>Standard Header</h4></div>
+      </div>
+      <div class="component-card" onclick="openModal('header-burger')">
+        <div class="preview preview-dark">
+           <div class="preview-header">
+            <span class="logo-preview">Botano</span>
+            <div class="burger-preview">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+        <div class="card-info"><h4>Burger Menu (Mobile)</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="heroes" class="doc-section">
+    <h2 class="section-title">Heroes & Jumbotron</h2>
+    <div class="grid-2">
+      <div class="component-card" onclick="openModal('hero-center')">
+        <div class="preview preview-dark" style="text-align: center;">
+          <h3 style="margin:0; color: #fff;">Главный заголовок</h3>
+          <p style="font-size: 12px; color: #aaa;">Описание под заголовком</p>
+          <button class="btn btn-primary" style="zoom:0.8;">Начать</button>
+        </div>
+        <div class="card-info"><h4>Centered Hero</h4></div>
+      </div>
+      <div class="component-card" onclick="openModal('jumbotron')">
+        <div class="preview preview-dark" style="padding: 15px;">
+          <div class="jumbotron-preview">
+            <h4 style="margin:0;">Jumbotron</h4>
+            <p style="font-size: 12px;">Блок для выделения контента.</p>
+          </div>
+        </div>
+        <div class="card-info"><h4>Jumbotron</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cards-sec" class="doc-section">
+    <h2 class="section-title">Cards</h2>
+    <div class="grid-3">
+      <div class="component-card" onclick="openModal('card-product')">
+        <div class="preview">
+          <div class="card-preview product-card">
+            <div class="card-img-placeholder"></div>
+            <h4>Товар 1</h4>
+            <p>Описание товара...</p>
+            <button class="btn btn-primary" style="zoom:0.8; width:100%;">Купить</button>
+          </div>
+        </div>
+        <div class="card-info"><h4>Product Card</h4></div>
+      </div>
+      <div class="component-card" onclick="openModal('card-news')">
+        <div class="preview">
+           <div class="card-preview news-card">
+            <h4>Новость</h4>
+            <p>Краткое содержание...</p>
+            <a href="#">Читать далее</a>
+           </div>
+        </div>
+        <div class="card-info"><h4>News Card</h4></div>
+      </div>
+      <div class="component-card" onclick="openModal('card-glow')">
+        <div class="preview">
+           <div class="card-preview glow-card">
+            <p>Карточка с<br/><b>Glow-эффектом</b><br/>при наведении</p>
+           </div>
+        </div>
+        <div class="card-info"><h4>Glow on Hover Card</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="layout" class="doc-section">
+    <h2 class="section-title">Grid Layout (Row/Columns)</h2>
+    <div class="component-card full-width" onclick="openModal('grid-system')">
+      <div class="preview" style="padding: 10px;">
+        <div class="grid-preview-container">
+          <div class="grid-col">Col 1/3</div>
+          <div class="grid-col">Col 2/3</div>
+          <div class="grid-col">Col 3/3</div>
+          <div class="grid-col" style="flex-basis: 66%;">Col 2/3</div>
+          <div class="grid-col">Col 1/3</div>
+        </div>
+      </div>
+      <div class="card-info"><h4>Flexbox Grid System</h4></div>
+    </div>
+  </section>
+
+  <section id="typography" class="doc-section">
+    <h2 class="section-title">Typography</h2>
+    <div class="component-card full-width" onclick="openModal('typography')">
+      <div class="preview" style="align-items: flex-start; padding: 20px; color: white;">
+        <h1 style="margin:0; font-size: 24px; font-family: 'Montserrat', sans-serif;">H1 (Montserrat)</h1>
+        <h3 style="margin:0; font-size: 18px; font-family: 'Inter', sans-serif;">H3 (Inter)</h3>
+        <p style="margin:5px 0; font-size: 14px; font-family: 'Inter', sans-serif;">Обычный текст (Inter).</p>
+        <p class="muted" style="margin:0; font-size: 12px;">Приглушенный .muted текст.</p>
+      </div>
+      <div class="card-info"><h4>Global Typography</h4></div>
+    </div>
+  </section>
+  
+  <section id="footer-sec" class="doc-section">
+    <h2 class="section-title">Footers</h2>
+    <div class="component-card" onclick="openModal('footer-simple')">
+       <div class="preview preview-dark" style="align-items: flex-end;">
+          <div class="footer-preview">
+            <span>© 2025 Botano</span>
+            <div>
+              <a href="#">Telegram</a>
+              <a href="#">GitHub</a>
+            </div>
+          </div>
+       </div>
+       <div class="card-info"><h4>Simple Footer</h4></div>
+    </div>
+  </section>
+
+  <section id="js-components" class="doc-section">
+    <h2 class="section-title">Interactive (JS) Components</h2>
+    <p class="section-desc">Кликайте прямо на превью, чтобы проверить.</p>
+    <div class="grid-3">
+      <div class="component-card" onclick="openModal('accordion')">
+        <div class="preview" style="padding: 10px; background: #111;">
+           <div class="accordion-preview">
+             <div class="acc-item-preview">
+               <div class="acc-header-preview" onclick="toggleAcc(this)">
+                 <span>Вопрос 1</span><span>+</span>
+               </div>
+               <div class="acc-body-preview">
+                 <p>Ответ на вопрос 1...</p>
+               </div>
+             </div>
+             <div class="acc-item-preview">
+               <div class="acc-header-preview" onclick="toggleAcc(this)">
+                 <span>Вопрос 2</span><span>+</span>
+               </div>
+               <div class="acc-body-preview">
+                 <p>Ответ на вопрос 2...</p>
+               </div>
+             </div>
+           </div>
+        </div>
+        <div class="card-info"><h4>Accordion</h4></div>
+      </div>
+      
+      <div class="component-card" onclick="openModal('tabs')">
+        <div class="preview" style="padding: 10px; background: #111;">
+           <div class="tabs-preview">
+             <div class="tab-buttons">
+               <button class="tab-link active" onclick="openTab(event, 'tab1-prev')">Tab 1</button>
+               <button class="tab-link" onclick="openTab(event, 'tab2-prev')">Tab 2</button>
+             </div>
+             <div id="tab1-prev" class="tab-content active">
+               <p>Содержимое <b>Tab 1</b>...</p>
+             </div>
+             <div id="tab2-prev" class="tab-content">
+               <p>Содержимое <b>Tab 2</b>...</p>
+             </div>
+           </div>
+        </div>
+        <div class="card-info"><h4>Tabs (Вкладки)</h4></div>
+      </div>
+      
+      <div class="component-card" onclick="openModal('modal-itself')">
+        <div class="preview">
+           <button class="btn btn-primary" onclick="event.stopPropagation(); openModal('demo-sample');">
+             Попробовать модалку
+           </button>
+        </div>
+        <div class="card-info"><h4>Modal (Модальное окно)</h4></div>
+      </div>
+      
+    </div>
+  </section>
+
+</main>
+<div class="modal-bg" id="modal-bg" onclick="closeModal(event)">
+
+  <div class="modal" id="btn-primary-modal">
+    <h2>Primary Button</h2>
+    <p>Основная кнопка (из `index.css`).</p>
+    <div class="usage-example">
+       <button class="btn btn-primary">Primary Button</button>
+    </div>
+    <h3>HTML:</h3>
+    <pre>&lt;button class="btn btn-primary"&gt;Button&lt;/button&gt;</pre>
+    <button class="copy-btn" onclick="copyCode('btn-primary')">Копировать</button>
+  </div>
+  
+  <div class="modal" id="btn-ghost-modal">
+    <h2>Ghost Button</h2>
+    <p>Второстепенная кнопка (из `index.css`).</p>
+    <div class="usage-example">
+       <button class="btn btn-ghost">Ghost Button</button>
+    </div>
+    <h3>HTML:</h3>
+    <pre>&lt;button class="btn btn-ghost"&gt;Button&lt;/button&gt;</pre>
+    <button class="copy-btn" onclick="copyCode('btn-ghost')">Копировать</button>
+  </div>
+
+  <div class="modal" id="btn-gradient-modal">
+    <h2>Gradient Button</h2>
+    <p>Кнопка с градиентом (стили в `documentation.css`).</p>
+    <div class="usage-example">
+       <button class="btn btn-gradient-demo">Gradient Button</button>
+    </div>
+    <h3>HTML:</h3>
+    <pre>&lt;button class="btn btn-gradient-demo"&gt;Button&lt;/button&gt;</pre>
+    <button class="copy-btn" onclick="copyCode('btn-gradient')">Копировать</button>
+  </div>
+  
+  <div class="modal" id="btn-outline-modal">
+    <h2>Outline Button</h2>
+    <p>Кнопка с обводкой (стили в `documentation.css`).</p>
+    <div class="usage-example">
+       <button class="btn btn-outline-demo">Outline Button</button>
+    </div>
+    <h3>HTML:</h3>
+    <pre>&lt;button class="btn btn-outline-demo"&gt;Button&lt;/button&gt;</pre>
+    <button class="copy-btn" onclick="copyCode('btn-outline')">Копировать</button>
+  </div>
+
+  <div class="modal" id="header-standard-modal">
+    <h2>Standard Header</h2>
+    <p>Стандартная шапка сайта (из `style.css`).</p>
+    <div class="usage-example preview-dark">
+      <header class="site-header" style="position: static; width: 100%;">
+        <div class="container header-inner">
+          <a href="#" class="logo">Botano</a>
+          <nav class="nav">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <h3>HTML:</h3>
+    <pre>&lt;header class="site-header"&gt;
+  &lt;div class="container header-inner"&gt;
+    &lt;div class="brand"&gt;
+      &lt;a href="./index.html" class="logo"&gt;Botano&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;nav class="nav" id="main-nav"&gt;
+      &lt;a href="#" class="nav-link"&gt;Ссылка 1&lt;/a&gt;
+      &lt;a href="#" class="nav-link"&gt;Ссылка 2&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</pre>
+    <button class="copy-btn" onclick="copyCode('header-standard')">Копировать</button>
+  </div>
+  
+  <div class="modal" id="header-burger-modal">
+    <h2>Burger Menu (Mobile)</h2>
+    <p>HTML-структура для мобильного меню (логика в `index.html` или `documentation.js`).</p>
+    <h3>HTML (Пример):</h3>
+    <pre>&lt;!-- Кнопка бургер (появляется на < 680px) --&gt;
+&lt;button class="nav-toggle" aria-label="Открыть меню"&gt;
+  &lt;svg&gt;...&lt;/svg&gt;
+&lt;/button&gt;
+
+&lt;!-- Навигация (скрыта по умолчанию) --&gt;
+&lt;nav class="nav" id="main-nav"&gt;
+  ...
+&lt;/nav&gt;</pre>
+    <h3>JavaScript (Пример):</h3>
+    <pre>// JS для переключения класса 'nav-open' у body или nav
+const toggleBtn = document.querySelector('.nav-toggle');
+const nav = document.querySelector('#main-nav');
+
+toggleBtn.addEventListener('click', () => {
+  nav.classList.toggle('nav-open');
+});</pre>
+    <button class="copy-btn" onclick="copyCode('header-burger')">Копировать</button>
+  </div>
+  
+  <div class="modal" id="hero-center-modal">
+    <h2>Centered Hero</h2>
+    <p>Блок Hero с центрированным контентом (из `index.css`).</p>
+    <div class="usage-example preview-dark" style="text-align:center;">
+       <h1 class="hero-title">Hero Title</h1>
+       <p class="hero-sub">Подзаголовок с описанием.</p>
+       <button class="btn btn-primary">Call to Action</button>
+    </div>
+    <h3>HTML:</h3>
+    <pre>&lt;section class="hero"&gt;
+  &lt;div class="hero-inner"&gt;
+    &lt;h1 class="hero-title"&gt;Hero Title&lt;/h1&gt;
+    &lt;p class="hero-sub"&gt;Подзаголовок с описанием.&lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Call to Action&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</pre>
+    <button class="copy-btn" onclick="copyCode('hero-center')">Копировать</button>
+  </div>
+  
+  <div class="modal" id="jumbotron-modal">
+    <h2>Jumbotron</h2>
+    <p>Простой блок для выделения контента.</p>
+    <div class="usage-example">
+       <div class="jumbotron-demo">
+         <h2>Jumbotron Title</h2>
+         <p>Описание, которое выделяется.</p>
+       </div>
+    </div>
+    <h3>HTML:</h3>
+    <pre>&lt;div class="jumbotron-demo"&gt;
+  &lt;h2&gt;Jumbotron Title&lt;/h2&gt;
+  &lt;p&gt;Описание, которое выделяется.&lt;/p&gt;
+&lt;/div&gt;</pre>
+    <h3>CSS (Добавьте в `documentation.css`):</h3>
+    <pre>.jumbotron-demo {
+  background: var(--card, #0f1013);
+  border: 1px solid var(--border-color, #222);
+  padding: 2rem;
+  border-radius: var(--radius, 12px);
+  color: var(--white, #fff);
+}</pre>
+    <button class="copy-btn" onclick="copyCode('jumbotron')">Копировать</button>
+  </div>
+
+  <div class="modal" id="card-product-modal">
+    <h2>Product Card</h2>
+    <p>Карточка товара.</p>
+    <div class="usage-example">
+      <div class="card-preview product-card" style="width: 200px;">
+        <div class="card-img-placeholder"></div>
+        <h4>Товар 1</h4>
+        <p>Описание товара...</p>
+        <button class="btn btn-primary" style="width:100%;">Купить</button>
+      </div>
+    </div>
+    <h3>HTML:</h3>
+    <pre>&lt;div class="product-card"&gt;
+  &lt;div class="card-img-placeholder"&gt;&lt;/div&gt;
+  &lt;h4&gt;Название товара&lt;/h4&gt;
+  &lt;p&gt;Описание товара...&lt;/p&gt;
+  &lt;button class="btn btn-primary"&gt;Купить&lt;/button&gt;
+&lt;/div&gt;</pre>
+    <h3>CSS (Добавьте в `documentation.css`):</h3>
+    <pre>.product-card {
+  background: var(--card, #0f1013);
+  border: 1px solid var(--border-color, #222);
+  border-radius: var(--radius, 12px);
+  padding: 1rem;
+  color: var(--white, #fff);
+}
+.card-img-placeholder {
+  height: 100px;
+  background: var(--accent1, #6f4cff);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}</pre>
+    <button class="copy-btn" onclick="copyCode('card-product')">Копировать</button>
+  </div>
+  
+  <div class="modal" id="card-news-modal">
+     <h2>News Card</h2>
+     <p>Карточка для новостей или блога.</p>
+     <div class="usage-example">
+       <div class="card-preview news-card" style="width: 250px;">
+        <h4>Заголовок новости</h4>
+        <p>Краткое содержание новости...</p>
+        <a href="#">Читать далее &rarr;</a>
+       </div>
+     </div>
+     <h3>HTML:</h3>
+     <pre>&lt;div class="news-card"&gt;
+  &lt;h4&gt;Заголовок новости&lt;/h4&gt;
+  &lt;p&gt;Краткое содержание новости...&lt;/p&gt;
+  &lt;a href="#"&gt;Читать далее &rarr;&lt;/a&gt;
+&lt;/div&gt;</pre>
+     <h3>CSS (Добавьте в `documentation.css`):</h3>
+     <pre>.news-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: #fff;
+}
+.news-card a {
+  color: var(--accent1, #6f4cff);
+  text-decoration: none;
+  font-weight: 600;
+}</pre>
+     <button class="copy-btn" onclick="copyCode('card-news')">Копировать</button>
+  </div>
+  
+  <div class="modal" id="card-glow-modal">
+    <h2>Glow on Hover Card</h2>
+    <p>Карточка с эффектом свечения при наведении (из `index.css`).</p>
+    <div class="usage-example">
+       <div class="card-code" style="min-width: 200px; text-align:center;">
+         <h3 class="card-title">Hover Me</h3>
+         <p class="muted small">Наведите на меня</p>
+       </div>
+    </div>
+    <h3>HTML:</h3>
+    <pre>&lt;!-- Использует класс .card-code из index.css --&gt;
+&lt;div class="card-code"&gt;
+  &lt;h3 class="card-title"&gt;Glow Card&lt;/h3&gt;
+  &lt;p class="muted small"&gt;Контент...&lt;/p&gt;
+&lt;/div&gt;</pre>
+    <button class="copy-btn" onclick="copyCode('card-glow')">Копировать</button>
+  </div>
+
+  <div class="modal" id="grid-system-modal">
+    <h2>Flexbox Grid</h2>
+    <p>Простая сетка на Flexbox.</p>
+    <div class="usage-example" style="width: 100%;">
+      <div class="grid-preview-container">
+        <div class="grid-col">Col 1/2</div>
+        <div class="grid-col">Col 1/2</div>
+      </div>
+    </div>
+    <h3>HTML:</h3>
+    <pre>&lt;div class="row"&gt;
+  &lt;div class="col-6"&gt;
+    &lt;p&gt;Контент 50%&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="col-6"&gt;
+    &lt;p&gt;Контент 50%&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+    <h3>CSS (Добавьте в `documentation.css`):</h3>
+    <pre>.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px; /* Отступ для колонок */
+}
+/* Базовый стиль колонки */
+[class^="col-"] {
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.col-6 {
+  flex-basis: 50%;
+  max-width: 50%;
+}
+.col-4 {
+  flex-basis: 33.33%;
+  max-width: 33.33%;
+}
+.col-12 {
+  flex-basis: 100%;
+  max-width: 100%;
+}</pre>
+    <button class="copy-btn" onclick="copyCode('grid-system')">Копировать</button>
+  </div>
+  
+  <div class="modal" id="typography-modal">
+     <h2>Typography</h2>
+     <p>Основные стили текста (из `style.css` и `index.css`).</p>
+     <div class="usage-example" style="align-items: flex-start; flex-direction: column;">
+       <h1 class="hero-title" style="font-size: 2rem;">.hero-title (Montserrat)</h1>
+       <h2 class="section-title" style="font-size: 1.5rem;">.section-title (Montserrat)</h2>
+       <p style="color: #fff;">Обычный текст (Inter)</p>
+       <p class="muted">.muted текст (Inter)</p>
+     </div>
+     <h3>HTML:</h3>
+     <pre>&lt;h1 class="hero-title"&gt;Заголовок 1&lt;/h1&gt;
+&lt;h2 class="section-title"&gt;Заголовок 2&lt;/h2&gt;
+&lt;p&gt;Обычный текст.&lt;/p&gt;
+&lt;p class="muted"&gt;Приглушенный текст.&lt;/p&gt;</pre>
+     <button class="copy-btn" onclick="copyCode('typography')">Копировать</button>
+  </div>
+  
+  <div class="modal" id="footer-simple-modal">
+    <h2>Simple Footer</h2>
+    <p>Простой футер (из `index.css`).</p>
+    <div class="usage-example preview-dark" style="width:100%;">
+       <footer class="footer-modern" style="padding: 20px 0 0; border:0;">
+         <div class="container footer-inner" style="flex-direction: column; align-items: center;">
+           <div class="footer-brand">
+             <a href="#" class="logo">Botano</a>
+           </div>
+           <div class="footer-links">
+             <a href="#">Docs</a>
+             <a href="#">About</a>
+           </div>
+         </div>
+       </footer>
+    </div>
+    <h3>HTML:</h3>
+    <pre>&lt;footer class="footer-modern"&gt;
+  &lt;div class="container footer-inner"&gt;
+    &lt;div class="footer-brand"&gt;
+      &lt;a href="#" class="logo"&gt;Botano&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="footer-links"&gt;
+      &lt;a href="#"&gt;Документация&lt;/a&gt;
+      &lt;a href="#"&gt;О нас&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</pre>
+    <button class="copy-btn" onclick="copyCode('footer-simple')">Копировать</button>
+  </div>
+
+  <div class="modal" id="accordion-modal">
+    <h2>Accordion</h2>
+    <p>Раскрывающийся список. Требует JS.</p>
+    <div class="usage-example">
+      <div class="accordion-preview" style="width: 100%;">
+        <div class="acc-item-preview">
+          <div class="acc-header-preview" onclick="toggleAcc(this)">
+            <span>Вопрос 1</span><span>+</span>
+          </div>
+          <div class="acc-body-preview"><p>Ответ 1...</p></div>
+        </div>
+      </div>
+    </div>
+    <h3>HTML:</h3>
+    <pre>&lt;div class="accordion"&gt;
+  &lt;div class="acc-item"&gt;
+    &lt;div class="acc-header" onclick="toggleAcc(this)"&gt;
+      <span>Вопрос 1</span>
+      &lt;span&gt;+&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="acc-body"&gt;
+      &lt;p&gt;Ответ на вопрос 1...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="acc-item"&gt;
+    &lt;div class="acc-header" onclick="toggleAcc(this)"&gt;
+      &lt;span&gt;Вопрос 2&lt;/span&gt;
+      &lt;span&gt;+&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="acc-body"&gt;
+      &lt;p&gt;Ответ на вопрос 2...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+    <h3>CSS (Добавьте в `documentation.css`):</h3>
+    <pre>.acc-item { border-bottom: 1px solid #333; }
+.acc-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  cursor: pointer;
+  color: #fff;
+}
+.acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+.acc-body p { padding: 0 1rem 1rem; color: #aaa; }
+.acc-item.active .acc-body { max-height: 100px; }
+.acc-item.active .acc-header span:last-child { transform: rotate(45deg); }</pre>
+    <h3>JavaScript (Добавьте в `documentation.js`):</h3>
+    <pre>function toggleAcc(element) {
+  const item = element.closest('.acc-item, .acc-item-preview');
+  item.classList.toggle('active');
+}</pre>
+    <button class="copy-btn" onclick="copyCode('accordion')">Копировать</button>
+  </div>
+  
+  <div class="modal" id="tabs-modal">
+    <h2>Tabs (Вкладки)</h2>
+    <p>Переключение контента по вкладкам. Требует JS.</p>
+    <div class="usage-example" style="width: 100%;">
+      <div class="tabs-preview">
+         <div class="tab-buttons">
+           <button class="tab-link active" onclick="openTab(event, 'tab1-demo')">Tab 1</button>
+           <button class="tab-link" onclick="openTab(event, 'tab2-demo')">Tab 2</button>
+         </div>
+         <div id="tab1-demo" class="tab-content active">
+           <p>Содержимое <b>Tab 1</b>...</p>
+         </div>
+         <div id="tab2-demo" class="tab-content">
+           <p>Содержимое <b>Tab 2</b>...</p>
+         </div>
+       </div>
+    </div>
+    <h3>HTML:</h3>
+    <pre>&lt;div class="tabs-container"&gt;
+  &lt;div class="tab-buttons"&gt;
+    &lt;button class="tab-link active" onclick="openTab(event, 'tab1-main')"&gt;Вкладка 1&lt;/button&gt;
+    &lt;button class="tab-link" onclick="openTab(event, 'tab2-main')"&gt;Вкладка 2&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div id="tab1-main" class="tab-content active"&gt;
+    &lt;p&gt;Содержимое для вкладки 1...&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id="tab2-main" class="tab-content"&gt;
+    &lt;p&gt;Содержимое для вкладки 2...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+    <h3>CSS (Добавьте в `documentation.css`):</h3>
+    <pre>.tab-buttons { border-bottom: 1px solid #333; }
+.tab-link {
+  background: none;
+  border: none;
+  color: #888;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.tab-link.active {
+  color: var(--accent1, #6f4cff);
+  border-bottom: 2px solid var(--accent1, #6f4cff);
+}
+.tab-content {
+  display: none;
+  padding: 1rem;
+  color: #fff;
+}
+.tab-content.active { display: block; }</pre>
+    <h3>JavaScript (Добавьте в `documentation.js`):</h3>
+    <pre>function openTab(evt, tabId) {
+  const container = evt.target.closest('.tabs-container, .tabs-preview');
+  
+  // Скрыть весь контент
+  container.querySelectorAll('.tab-content').forEach(tab => {
+    tab.style.display = 'none';
+  });
+  
+  // Снять .active с кнопок
+  container.querySelectorAll('.tab-link').forEach(link => {
+    link.classList.remove('active');
+  });
+  
+  // Показать нужный контент и активировать кнопку
+  document.getElementById(tabId).style.display = 'block';
+  evt.currentTarget.classList.add('active');
+}</pre>
+    <button class="copy-btn" onclick="copyCode('tabs')">Копировать</button>
+  </div>
+  
+  <div class="modal" id="demo-sample-modal">
+    <h2>Это Демо Модалка</h2>
+    <p>Это окно было вызвано кнопкой из превью. Нажмите на фон, чтобы закрыть его.</p>
+    <button class="btn btn-primary" onclick="closeModal(event, true)">Закрыть</button>
+  </div>
+  
+  <div class="modal" id="modal-itself-modal">
+    <h2>Modal (Модальное окно)</h2>
+    <p>Система модальных окон. Требует JS.</p>
+    <div class="usage-example">
+      <button class="btn btn-primary" onclick="openModal('demo-sample')">
+         Открыть демо
+      </button>
+    </div>
+    <h3>HTML:</h3>
+    <pre>&lt;!-- Кнопка-триггер --&gt;
+&lt;button onclick="openModal('my-modal-id')"&gt;Открыть окно&lt;/button&gt;
+
+&lt;!-- Фон (один на всю страницу) --&gt;
+&lt;div class="modal-bg" id="modal-bg" onclick="closeModal(event)"&gt;
+
+  &lt;!-- Само модальное окно --&gt;
+  &lt;div class="modal" id="my-modal-id-modal"&gt;
+    &lt;h2&gt;Заголовок&lt;/h2&gt;
+    &lt;p&gt;Контент...&lt;/p&gt;
+    &lt;button onclick="closeModal(event, true)"&gt;Закрыть&lt;/button&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</pre>
+    <h3>JavaScript (Добавьте в `documentation.js`):</h3>
+    <pre>function openModal(id) {
+  document.getElementById('modal-bg').style.display = 'flex';
+  document.getElementById(id + '-modal').style.display = 'block';
+}
+
+function closeModal(e, force = false) {
+  // force = true для кнопки "Закрыть"
+  if (e.target.id === 'modal-bg' || force) {
+    document.getElementById('modal-bg').style.display = 'none';
+    // Скрыть ВСЕ модалки
+    document.querySelectorAll('.modal').forEach(m => {
+      m.style.display = 'none';
+    });
+  }
+  // Предотвращаем закрытие при клике на контент
+  e.stopPropagation();
+}</pre>
+    <button class="copy-btn" onclick="copyCode('modal-itself')">Копировать</button>
+  </div>
+</div>
+  <footer class="footer-modern">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">Botano</a>
+        <p class="muted tiny">Создавайте сайты проще. Botano помогает воплощать идеи быстро и красиво.</p>
+      </div>
+      <div class="footer-links">
+        <a href="./documentation.html">Документация</a>
+        <a href="/index.html#about">О нас</a>
+        <a href="./index.html#contact">Помощь</a>
+<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+  </ul>
+      </div>
+   
+      <div class="footer-social">
+  <a href="https://web.telegram.org/" target="_blank" rel="noopener" class="social-link" aria-label="Telegram">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 2L11 13" />
+      <path d="M22 2L15 22l-4-9-9-4Z" />
+    </svg>
+  </a>
+
+  <a href="https://github.com/" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 1C5.9 1 1 5.9 1 12c0 4.9 3.2 9.1 7.6 10.6.6.1.8-.2.8-.5v-2c-3.1.7-3.7-1.5-3.7-1.5-.5-1.1-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1.9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.7-1.4-2.6-.3-5.4-1.3-5.4-5.6 0-1.2.4-2.2 1-3-.1-.3-.4-1.4.1-2.9 0 0 .8-.3 2.7 1 1.7-0.5 3.5-0.5 5.2 0 1.9-1.3 2.7-1 2.7-1 .5 1.5.2 2.6.1 2.9.7.8 1 1.8 1 3 0 4.4-2.8 5.3-5.5 5.6.4.3.8 1 .8 2v3c0 .3.2.6.8.5A10.9 10.9 0 0 0 23 12c0-6.1-4.9-11-11-11Z" />
+    </svg>
+  </a>
+
+  <a href="https://workspace.google.com/intl/ru/gmail/"target="_blank" rel="noopener" class="social-link" aria-label="Gmail">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2" ry="2" />
+      <polyline points="3,6 12,13 21,6" />
+    </svg>
+  </a>
+</div></div>
+    <div class="footer-bottom">
+      <small class="muted">© 2025 Botano. Все права защищены.</small>
+    </div>
+  </footer>
+
+<script src="./documentation.js"></script>
+</body>
+</html>
